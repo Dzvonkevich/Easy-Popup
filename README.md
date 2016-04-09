@@ -4,7 +4,7 @@ This plugin can make your coding easier, because with its help you dont need to 
 
 [DEMO](http://plugins.etrange.eu/easypopup/demo.html)
 
-![easypopup plugin](http://plugins.etrange.eu/easypopup/test-easypopup.gif)
+![easypopup plugin gif](https://github.com/Dzvonkevich/Easy-Popup/blob/master/test-easypopup.gif)
 
 ## Required ##
 
