@@ -4,6 +4,8 @@ This plugin can make your coding easier , because it robs you of the need to wri
 
 [DEMO](http://plugins.etrange.eu/easypopup/demo.html)
 
+![easypopup plugin](http://plugins.etrange.eu/easypopup/test-easypopup.gif)
+
 ## Required
 
 *jQuery
