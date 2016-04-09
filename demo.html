@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <title>EasyPopup Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="EasyPopup plugin can make your coding easier , because it robs you of the need to write javascript code to show the model window" />
+    <meta name="keywords" content="easypopup, easy popup, popup demo, popup plugin, easypopup plugin" />
+    <meta name="author" content="Dzvonkevich Saveliy" />
+    <meta name="publisher-email" content="dzvonkevich@gmail.com" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/easypopups.css"/>
+    <link rel="stylesheet" href="css/easypopups-styles.css"/>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>EasyPopup Demo</h1>
+        <p>Hello, my friend! Wellcome to easypopup demonstration page! Member what for using this plugin? you must include <a href="https://jquery.com/" blank="target">jQuery library</a>.</p> 
+        <a href="#popup-default" class="btn">default</a>
+        <h3>EasyPopup slide show examples</h3>
+        <a href="#popup-slidetop" class="btn">Slidetop show</a>
+        <a href="#popup-slidebottom" class="btn">Slidebottom show</a>
+        <a href="#popup-slideleft" class="btn">Slideleft show</a>
+        <a href="#popup-slideright" class="btn">Slideright show</a>
+        <h3>EasyPopup slide hide examples</h3>
+        <a href="#popup-slidetop-hide" class="btn">Slidetop hide</a>
+        <a href="#popup-slidebottom-hide" class="btn">Slidebottom hide</a>
+        <a href="#popup-slideleft-hide" class="btn">Slideleft hide</a>
+        <a href="#popup-slideright-hide" class="btn">Slideright hide</a>
+        <h3>EasyPopup slide steps examples</h3>
+        <a href="#popup-step-one" class="btn">Steps example</a>
+        <p>More info? Check <a href="https://github.com/Dzvonkevich/Easy-Popups">my repository</a> on GitHub.</p>
+        
+    </div>
+
+    <div id="popup-default" class="easypopup-block easypopup">
+        <h2>EasyPopup</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-slidetop" class="easypopup-block easypopup" data-easypopup-in="slidetop">
+        <h2>EasyPopup from top</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-slidebottom" class="easypopup-block easypopup" data-easypopup-in="slidebottom">
+        <h2>EasyPopup from bottom</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-slideleft" class="easypopup-block easypopup" data-easypopup-in="slideleft">
+        <h2>EasyPopup from left</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-slideright" class="easypopup-block easypopup" data-easypopup-in="slideright">
+        <h2>EasyPopup from left</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-slidetop-hide" class="easypopup-block easypopup" data-easypopup-out="slidetop">
+        <h2>EasyPopup to top</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-slidebottom-hide" class="easypopup-block easypopup" data-easypopup-out="slidebottom">
+        <h2>EasyPopup to bottom</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-slideleft-hide" class="easypopup-block easypopup" data-easypopup-out="slideleft">
+        <h2>EasyPopup to left</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-slideright-hide" class="easypopup-block easypopup" data-easypopup-out="slideright">
+        <h2>EasyPopup to left</h2>
+        <p>It's very easy for using!</p>
+    </div>
+
+    <div id="popup-step-one" class="easypopup-block easypopup" data-easypopup-in="slideleft" data-easypopup-out="slideright">
+        <h2>EasyPopup the first step</h2>
+        <p>It's very easy for using!</p>
+        <p>Click the button, the EasyPopup does all the work for you</p>
+        <a href="#popup-step-two" class="btn">Go to secound step!</a>
+    </div>
+
+    <div id="popup-step-two" class="easypopup-block easypopup" data-easypopup-in="slideleft" data-easypopup-out="slideright">
+        <h2>EasyPopup the secound step</h2>
+        <p>Cu-cu, I'm from left! Like it? More info in <a href="https://github.com/Dzvonkevich/Easy-Popups">my repository</a> on GitHub</p>
+    </div>
+
+	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/easypopups.js"></script>
+</body>
+</html>
