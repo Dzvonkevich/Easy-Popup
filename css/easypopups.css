@@ -108,7 +108,28 @@ a.btn {
 	font-size: 1em;
 	background: #ff7043;
 	text-decoration: none;
+	transition: ease .3s;
+	-webkit-transition: ease .3s;
 	
+}
+
+a.btn:hover {
+	background: #E04C1D;
+	transition: ease .3s;
+	-webkit-transition: ease .3s;
+}
+
+a.btn:active {
+	background: #DD2C00;
+	transform: scale(.98);
+	transition: ease .3s;
+	-webkit-transition: ease .3s;
+}
+
+a.btn:focus {
+	background: rgba(38, 50, 56, 0.4);
+	transition: ease .3s;
+	-webkit-transition: ease .3s;
 }
 
 a.btn + a.btn {

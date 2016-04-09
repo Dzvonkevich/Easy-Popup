@@ -1,6 +1,6 @@
 # EasyPopup Plugin #
 
-This plugin can make your coding easier , because it robs you of the need to write javascript code to show the modal window. Check beautiful material design style, adaptive and cross-browser source.
+This plugin can make your coding easier, because with its help you dont need to write javascript code to show the modal window. Check check the good-looking material design style, adaptive and cross-browser source.
 
 [DEMO](http://plugins.etrange.eu/easypopup/demo.html)
 
@@ -32,7 +32,7 @@ Modern browser like Chrome, Safari, FireFox...etc.
 
 ```
 
-*Create a button and popup with spacial classes <b>easypopup-block</b> and <b>easypopup</b>, like this:
+*Create a button and popup with special classes <b>easypopup-block</b> and <b>easypopup</b>, like this:
 
 ```
 <a href="#popup-default" class="some-class">Button</a>
@@ -74,7 +74,7 @@ Full code from example:
 
 ## Add effects ##
 
-If you want using animation effects like slideTop, use data- attributes <b>data-easypopup-in</b> and <b>data-easypopup-out</b>.
+If you want to use animation effects like slideTop, use data- attributes <b>data-easypopup-in</b> and <b>data-easypopup-out</b>.
 Parameters: slideleft, slideright, slidetop, slidebottom. By default: simple fade
 
 ```
