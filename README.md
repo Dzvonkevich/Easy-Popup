@@ -2,7 +2,7 @@
 
 Данный плагин способен упростить процесс создания попапов, ведь для вывода модального окна, тебе больше не понадобиться писать скрипты и стили. В коробке лежит каскадная одёжка в популярном Material Design. Смотри [DEMO](http://plugins.etrange.eu/easypopup/demo.html) и убедить в этом сам!
 
-![easypopup plugin gif](http://http://plugins.etrange.eu/easypopup/test-easypopup.gif)
+![easypopup plugin gif](http://plugins.etrange.eu/easypopup/test-easypopup.gif)
 
 ## Как подключить ##
 
