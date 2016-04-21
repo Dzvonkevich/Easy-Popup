@@ -1,52 +1,41 @@
 # EasyPopup Plugin #
 
-This plugin can make your coding easier, because with its help you dont need to write javascript code to show the modal window. Check check the good-looking material design style, adaptive and cross-browser source.
-
-[DEMO](http://plugins.etrange.eu/easypopup/demo.html)
+Данный плагин способен упростить процесс создания попапов, ведь для вывода модального окна, тебе больше не понадобиться писать скрипты и стили. В коробке лежит каскадная одёжка в популярном Material Design. Смотри [DEMO](http://plugins.etrange.eu/easypopup/demo.html) и убедить в этом сам!
 
 ![easypopup plugin gif](https://github.com/Dzvonkevich/Easy-Popup/blob/master/test-easypopup.gif)
 
-## Required ##
+## Как подключить ##
 
-*jQuery
-
-## Browser Support 
-
-Modern browser like Chrome, Safari, FireFox...etc.
-
-## How to use ##
-
-*Include jQuery and EasyPopup Plugin before closing tag </body>
+1. Прежде всего подключи библиотеку jQuery, затем JS-файл плагина. 
+Важно! Скрипты подключай перед закрывающим тегом BODY
 
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-<script type="text/javascript" src="js/easypopups.js"></script>
+<script type="text/javascript" src="js/easypopups.min.js"></script>
 
+</body>
+</html>
 ```
 
-*Include CSS before closing tag </head>
+2. Подключаем каскадные таблицы перед закрывающим тегом HEAD
 
 ```
-<link rel="stylesheet" href="css/easypopups.css"/>
-<link rel="stylesheet" href="css/easypopups-styles.css"/>
-
+<link rel="stylesheet" href="css/easypopups.css"/> <!-- Обязательно -->
+<link rel="stylesheet" href="css/easypopups-styles.css"/> <!-- Необязательно. Стили для оформления -->
 ```
 
-*Create a button and popup with special classes <b>easypopup-block</b> and <b>easypopup</b>, like this:
+3. Создай анкор. В качестве атрибута href укажи #popup-xxx, где xxx - любое слово латиницей. Затем создай блок, которой будет попапом и присвой ему ID с атрибутом popup-xxx (то же значение, что и в анкоре, но без решётки). 
 
 ```
-<a href="#popup-default" class="some-class">Button</a>
+<a href="#popup-default">Button</a>
 
-<div id="popup-default" class="easypopup-block easypopup">
+<div id="popup-default">
     <h2>EasyPopup</h2>
     <p>It's very easy for using!</p>
 </div>
-
 ```
 
-Text in attribute href is the ID of your popup. <b>Important, popup ID and link ankor must be equal and start from 'popup-'</b>
-
-Full code from example:
+Итак, что получилось:
 
 ```
 <!doctype html>
@@ -58,33 +47,47 @@ Full code from example:
 </head>
 <body>
 
-<a href="#popup-default" class="some-class">Button</a>
+<a href="#popup-default">Button</a>
 
-<div id="popup-default" class="easypopup-block easypopup">
+<div id="popup-default">
     <h2>EasyPopup</h2>
     <p>It's very easy for using!</p>
 </div>   
 
 <script type="text/javascript" src="js/vendor/jquery.js"></script>
-<script type="text/javascript" src="js/easypopups.js"></script>
+<script type="text/javascript" src="js/easypopups.min.js"></script>
 </body>
 </html>
 
 ```
 
-## Add effects ##
+## Визуальные эффекты ##
 
-If you want to use animation effects like slideTop, use data- attributes <b>data-easypopup-in</b> and <b>data-easypopup-out</b>.
-Parameters: slideleft, slideright, slidetop, slidebottom. By default: simple fade
+Для того, чтобы добавить эффекты нужно прописать в тег твоего попапа следующие параметры: data-easypopup-in="название-эффекта" и data-easypopup-out="название-эффекта". Список эффектов, которые можно использовать:
+
+* slidein/slideout - стоят по умолчанию, для появления и исчезновения;
+* slideleft;
+* slideright;
+* slidetop;
+* slidebottom;
 
 ```
 
-<div id="popup-slidetop-hide" class="easypopup-block easypopup" data-easypopup-in="slidetop" data-easypopup-out="slidetop">
+<div id="popup-xxx" data-easypopup-in="slidetop" data-easypopup-out="slidetop">
     <h2>EasyPopup to top</h2>
     <p>It's very easy for using!</p>
 </div> 
 
 ```
+Протестировать можно [здесь](http://plugins.etrange.eu/easypopup/demo.html).
+
+## Пошаговое появление попапов ##
+
+С EasyPopup можно создать полноценный диалог с пользователем. Достаточно лишь в попапе создать анкор, которы будет ссылаться на нужный тебе попап. Протестировать можно [по этой ссылке](http://plugins.etrange.eu/easypopup/demo.html).
+
+## Поддержка браузерами ##
+
+Все популятные браузеры. На IE даже не пробовал.
 
 
 

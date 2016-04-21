@@ -1,4 +1,12 @@
+/*	
+	Name: EasyPopup 
+	GitHub: https://github.com/Dzvonkevich/Easy-Popup
+	Autor: Dzvonkevich Saveliy
+*/
+
 $(function() {
+
+	$('[id^=popup-]').addClass('easypopup-block easypopup');
 
 	$('a[href^=#popup-]').on('click', function(easypopup) {
 
@@ -14,11 +22,11 @@ $(function() {
 			var easypopupOther = $('.easypopup');
 			var easypopupOtherOut = $(easypopupOther).data('easypopupOut');
 
+			hidePopup(easypopupOther, easypopupOut);
+
 			setTimeout(function(){
 				cancelPopup(easypopup);
-			}, 500);
-
-			hidePopup(easypopupOther, easypopupOut);
+			}, 1000);
 
 			setTimeout(function(){
 				showPopup(easypopup, easypopupIn); // Show popup

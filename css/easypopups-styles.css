@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
 html {
 	height: 100%;
 }
@@ -30,4 +32,104 @@ body {
 
 a {
 	color: #00acc1;
+}
+
+.easypopup--container {
+    color: #2c3e50;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.easypopup-block h1 {
+    margin-top: 0;
+}
+
+.easypopup-block {
+    width: 600px;
+    max-width: 90%;
+    box-sizing: border-box;
+    padding: 2em 3em;
+    background: #fff;
+    -webkit-box-shadow: 0px 5px 14px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 14px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 14px -6px rgba(0,0,0,0.75);
+} 
+
+.easypopup-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #263238;
+    -webkit-transition: ease .4s;
+    transition: ease .4s;
+}
+
+.easypopup-close:hover {
+    border-radius: 50%;
+    -webkit-transform: scale(.8);
+    transition: ease .3s;
+    -webkit-transform: scale(.8);
+    transition: ease .3s;
+    background: #dd2c00;
+}
+
+.easypopup-close:active {
+    transform: scale(.7) rotate(180deg);
+    transition: ease .2s;
+    background: #00c853;
+}
+
+.easypopup-close:after,
+.easypopup-close:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 50%;
+    border-top: 2px solid #fff;
+}
+
+.easypopup-close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);    
+}
+
+a.btn {
+    display: inline-block;
+    
+    padding: .5em .8em;
+    color: #fff; 
+    text-transform: uppercase;
+    font-size: 1em;
+    background: #ff7043;
+    text-decoration: none;
+    transition: ease .3s;
+    -webkit-transition: ease .3s;
+    
+}
+
+a.btn:hover {
+    background: #E04C1D;
+    transition: ease .3s;
+    -webkit-transition: ease .3s;
+}
+
+a.btn:active {
+    background: #DD2C00;
+    transform: scale(.98);
+    transition: ease .3s;
+    -webkit-transition: ease .3s;
+}
+
+a.btn:focus {
+    background: rgba(38, 50, 56, 0.4);
+    transition: ease .3s;
+    -webkit-transition: ease .3s;
+}
+
+a.btn + a.btn {
+    margin-top: 5px;
 }
