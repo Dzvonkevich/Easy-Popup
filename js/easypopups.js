@@ -4,230 +4,237 @@
 	Autor: Dzvonkevich Saveliy
 */
 
-$(function() {
+!(function() {
 
-	$('[id^=popup-]').addClass('easypopup-block easypopup');
+	$(function() {
 
-	$('a[href^=#popup-]').on('click', function(easypopup) {
+		$('[id^=popup-]').addClass('easypopup-block easypopup');
 
-		easypopup.preventDefault();
+		$('a[href^=#popup-]').on('click', function(easypopup) {
 
-		var easypopup = $(this).attr('href');
-		var easypopupIn = $(easypopup).data('easypopupIn');
-		var easypopupOut = $(easypopup).data('easypopupOut');
+			easypopup.preventDefault();
 
-		if ( $('.easypopup').hasClass('easypopup-active') ) {
-			$('.easypopup-black').fadeOut();
-			
-			var easypopupOther = $('.easypopup');
-			var easypopupOtherOut = $(easypopupOther).data('easypopupOut');
+			var easypopup = $(this).attr('href');
+			var easypopupIn = $(easypopup).data('easypopupIn');
+			var easypopupOut = $(easypopup).data('easypopupOut');
 
-			hidePopup(easypopupOther, easypopupOut);
+			if ( $('.easypopup').hasClass('easypopup-active') ) {
+				$('.easypopup-black').fadeOut();
+				
+				var easypopupOther = $('.easypopup');
+				var easypopupOtherOut = $(easypopupOther).data('easypopupOut');
 
-			setTimeout(function(){
-				cancelPopup(easypopup);
-			}, 1000);
+				hidePopup(easypopupOther, easypopupOut);
 
-			setTimeout(function(){
+				setTimeout(function(){
+					cancelPopup(easypopup);
+				}, 1000);
+
+				setTimeout(function(){
+					showPopup(easypopup, easypopupIn); // Show popup
+
+					$('.easypopup-close, .easypopup-black').on('click', function() {
+						$('.easypopup-black').fadeOut();
+
+						setTimeout(function(){
+							cancelPopup(easypopup);
+						}, 500);
+						hidePopup(easypopup, easypopupOut);
+					}); // Catch the click on close button.
+				}, 1000);
+
+			} else {
+
 				showPopup(easypopup, easypopupIn); // Show popup
 
 				$('.easypopup-close, .easypopup-black').on('click', function() {
 					$('.easypopup-black').fadeOut();
+					hidePopup(easypopup, easypopupOut);
 
 					setTimeout(function(){
 						cancelPopup(easypopup);
 					}, 500);
-					hidePopup(easypopup, easypopupOut);
 				}); // Catch the click on close button.
-			}, 1000);
 
-		} else {
+			}
 
-			showPopup(easypopup, easypopupIn); // Show popup
+		}); // Catch the click on button and working with easypopup
 
-			$('.easypopup-close, .easypopup-black').on('click', function() {
-				$('.easypopup-black').fadeOut();
-				hidePopup(easypopup, easypopupOut);
+	}); 
 
-				setTimeout(function(){
-					cancelPopup(easypopup);
-				}, 500);
-			}); // Catch the click on close button.
+	// Start in effects
 
+	function showPopup(easypopup, easypopupIn) {
+
+		$(easypopup).wrap('<div class="easypopup-container"></div>');
+		$(easypopup).addClass('easypopup-active');
+		$(easypopup).append('<a href="javascript:" class="easypopup-close"></a>');
+		$('.easypopup-container').before('<a href="javascript:" class="easypopup-black"></a>');
+		$('.easypopup-black').fadeIn(100);
+
+		switch(easypopupIn) {
+			case "slideleft":
+				slideInLeft(easypopup);
+				break;
+			case "slideright":
+				slideInRight(easypopup);
+				break;
+			case "slidetop":
+				slideInTop(easypopup);
+				break;
+			case "slidein":
+				slideIn(easypopup);
+				break;
+			case "slidebottom":
+				slideInBottom(easypopup);
+				break;
+			default:
+				slideIn(easypopup);
+				break;
 		}
 
-	}); // Catch the click on button and working with easypopup
+	} // Show popup
 
-}); 
+	function slideIn(easypopup) {
+		$(easypopup).fadeIn(200).animate({
+			opacity: "1"
+		}, 500);
+	} // slideIn
 
-// Start in effects
+	function slideInLeft(easypopup) {
 
-function showPopup(easypopup, easypopupIn) {
+		$(easypopup).css({
+			left: "30%",
+		});
 
-	$(easypopup).wrap('<div class="easypopup-container"></div>');
-	$(easypopup).addClass('easypopup-active');
-	$(easypopup).append('<a href="javascript:" class="easypopup-close"></a>');
-	$('.easypopup-container').before('<a href="javascript:" class="easypopup-black"></a>');
-	$('.easypopup-black').fadeIn(100);
+		$(easypopup).fadeIn(200).animate({
+			left: "50%",
+			opacity: "1"
+		}, 500);
 
-	switch(easypopupIn) {
-		case "slideleft":
-			slideInLeft(easypopup);
-			break;
-		case "slideright":
-			slideInRight(easypopup);
-			break;
-		case "slidetop":
-			slideInTop(easypopup);
-			break;
-		case "slidein":
-			slideIn(easypopup);
-			break;
-		case "slidebottom":
-			slideInBottom(easypopup);
-			break;
-		default:
-			slideIn(easypopup);
-			break;
-	}
+	} // slideInLeft
 
-} // Show popup
+	function slideInRight(easypopup) {
 
-function slideIn(easypopup) {
-	$(easypopup).fadeIn(200).animate({
-		opacity: "1"
-	}, 500);
-} // slideIn
+		$(easypopup).css({
+			left: "70%",
+		});
 
-function slideInLeft(easypopup) {
+		$(easypopup).fadeIn(200).animate({
+			left: "50%",
+			opacity: "1"
+		}, 500);
 
-	$(easypopup).css({
-		left: "30%",
-	});
+	} // slideInRight
 
-	$(easypopup).fadeIn(200).animate({
-		left: "50%",
-		opacity: "1"
-	}, 500);
+	function slideInTop(easypopup) {
 
-} // slideInLeft
+		$(easypopup).css({
+			top: "5%",
+		});
 
-function slideInRight(easypopup) {
+		$(easypopup).fadeIn(200).animate({
+			top: "10vh",
+			opacity: "1"
+		}, 500);
 
-	$(easypopup).css({
-		left: "70%",
-	});
+	} // slideInTop
 
-	$(easypopup).fadeIn(200).animate({
-		left: "50%",
-		opacity: "1"
-	}, 500);
+	function slideInBottom(easypopup) {
 
-} // slideInRight
+		$(easypopup).css({
+			top: "15%",
+		});
 
-function slideInTop(easypopup) {
+		$(easypopup).fadeIn(200).animate({
+			top: "10%",
+			opacity: "1"
+		}, 500);
 
-	$(easypopup).css({
-		top: "5%",
-	});
+	} // slideInBottom
 
-	$(easypopup).fadeIn(200).animate({
-		top: "10vh",
-		opacity: "1"
-	}, 500);
+	// Start out effects
 
-} // slideInTop
+	function hidePopup(easypopup, easypopupOut) {
 
-function slideInBottom(easypopup) {
+		switch(easypopupOut) {
+			case "slideleft":
+				slideOutLeft(easypopup);
+				break;
+			case "slideright":
+				slideOutRight(easypopup);
+				break;
+			case "slidetop":
+				slideOutTop(easypopup);
+				break;
+			case "slidebottom":
+				slideOutBottom(easypopup);
+				break;
+			default:
+				slideOut(easypopup);
+				break;
+		}
 
-	$(easypopup).css({
-		top: "15%",
-	});
+	} // Hide popup
 
-	$(easypopup).fadeIn(200).animate({
-		top: "10%",
-		opacity: "1"
-	}, 500);
+	function slideOutLeft(easypopup) {
+		$(easypopup).animate({
+			left:"30%", 
+			opacity: "0"
+		}, 500, function(){
+			$('.easypopup-active').fadeOut(500);
+		});
+	} // slideOutLeft 
 
-} // slideInBottom
+	function slideOutRight(easypopup) {
+		$(easypopup).animate({
+			left:"70%", 
+			opacity: "0"
+		}, 500, function(){
+			$('.easypopup-active').fadeOut(500);
+		});
+	} // slideOutRight 
 
-// Start out effects
+	function slideOutTop(easypopup) {
+		$(easypopup).animate({
+			top:"5%", 
+			opacity: "0"
+		}, 500, function(){
+			$('.easypopup-active').fadeOut(500);
+		});
+	} // slideOutTop 
 
-function hidePopup(easypopup, easypopupOut) {
+	function slideOutBottom(easypopup) {
+		$(easypopup).animate({
+			top:"15%", 
+			opacity: "0"
+		}, 500, function(){
+			$('.easypopup-active').fadeOut(500);
+		});
+	} // slideOutBottom 
 
-	switch(easypopupOut) {
-		case "slideleft":
-			slideOutLeft(easypopup);
-			break;
-		case "slideright":
-			slideOutRight(easypopup);
-			break;
-		case "slidetop":
-			slideOutTop(easypopup);
-			break;
-		case "slidebottom":
-			slideOutBottom(easypopup);
-			break;
-		default:
-			slideOut(easypopup);
-			break;
-	}
+	function slideOut(easypopup) {
+		$(easypopup).animate({
+			opacity: "0"
+		}, 500, function(){
+			$('.easypopup-active').fadeOut(500);
+		});
+	} // sli, fundeOut 
 
-} // Hide popup
+	function cancelPopup() {
 
-function slideOutLeft(easypopup) {
-	$(easypopup).animate({
-		left:"30%", 
-		opacity: "0"
-	}, 500, function(){
-		$('.easypopup-active').fadeOut(500);
-	});
-} // slideOutLeft 
+		$('.easypopup').css({
+			left:"50%", 
+			top:"10vh", 
+			display: "none"
+		});
 
-function slideOutRight(easypopup) {
-	$(easypopup).animate({
-		left:"70%", 
-		opacity: "0"
-	}, 500, function(){
-		$('.easypopup-active').fadeOut(500);
-	});
-} // slideOutRight 
+		$('.easypopup-active').unwrap();
+		$('.easypopup-active').removeClass('easypopup-active');
+		$('a').remove('.easypopup-close, .easypopup-black');
+	} // cancel
 
-function slideOutTop(easypopup) {
-	$(easypopup).animate({
-		top:"5%", 
-		opacity: "0"
-	}, 500, function(){
-		$('.easypopup-active').fadeOut(500);
-	});
-} // slideOutTop 
+})();
 
-function slideOutBottom(easypopup) {
-	$(easypopup).animate({
-		top:"15%", 
-		opacity: "0"
-	}, 500, function(){
-		$('.easypopup-active').fadeOut(500);
-	});
-} // slideOutBottom 
 
-function slideOut(easypopup) {
-	$(easypopup).animate({
-		opacity: "0"
-	}, 500, function(){
-		$('.easypopup-active').fadeOut(500);
-	});
-} // sli, fundeOut 
-
-function cancelPopup() {
-
-	$('.easypopup').css({
-		left:"50%", 
-		top:"10vh", 
-		display: "none"
-	});
-
-	$('.easypopup-active').unwrap();
-	$('.easypopup-active').removeClass('easypopup-active');
-	$('a').remove('.easypopup-close, .easypopup-black');
-} // cancel
+	
