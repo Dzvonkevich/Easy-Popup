@@ -80,7 +80,7 @@
 				break;
 		}
 
-		$('.easypopup-close, .easypopup-black').on('click', function() {
+		$('.easypopup-close, .easypopup-black, .easypopup-hide').on('click', function() {
 			hidePopup(easypopup, easypopupOut);
 		}); // Catch the click on close button.
 
