@@ -24,10 +24,14 @@
 <link rel="stylesheet" href="css/easypopups-styles.css"/> <!-- Необязательно. Стили для оформления -->
 ```
 
-* Создай анкор. В качестве атрибута href укажи #popup-xxx, где xxx - любое слово латиницей. Затем создай блок, которой будет попапом и присвой ему ID с атрибутом popup-xxx (то же значение, что и в анкоре, но без решётки). 
+* Создай анкор или тег button. Для анкора качестве атрибута href укажи #popup-xxx, а для тега button - создай атрибут data-easypopup-href со значением popup-xxx. Обрати внимание, что xxx - любое слово латиницей
+
+* Затем присвой модальному окну ID с атрибутом popup-xxx (то же значение, что и в анкоре или button, но без решётки).
 
 ```
 <a href="#popup-default">Button</a>
+<!-- или -->
+<button data-easypopup-href="popup-default">Button</button>
 
 <div id="popup-default">
     <h2>EasyPopup</h2>
@@ -48,6 +52,8 @@
 <body>
 
 <a href="#popup-default">Button</a>
+<!-- или -->
+<button data-easypopup-href="popup-default">Button</button>
 
 <div id="popup-default">
     <h2>EasyPopup</h2>
@@ -92,6 +98,7 @@
 * <b>.easypopup-block</b> - вид модального окна. Ему задавай ширину, пэддинги, фон, тень и прочее;
 * <b>.easypopup-close</b> - крестик в верхнем правом углу;
 * <b>.easypopup-black</b> - затемнённый фон.
+* <b>.easypopup-hide</b> - данный класс ты можешь добавить в ручную, если хочешь закрывать окно кнопкой из этого же окна. 
 
 ## Поддержка браузерами ##
 
