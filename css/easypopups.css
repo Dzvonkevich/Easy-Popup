@@ -7,11 +7,13 @@
 .easypopup {
 	position: fixed;
 	top: 10vh;
+	max-height: 80vh;
 	left: 50%;
 	display: none;
 	opacity: 0;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+	overflow-y: auto; 
 }
 
 .easypopup-close {
@@ -61,4 +63,9 @@
 	height: 100%;
 	background: rgba(38, 50, 56, .4);
 	display: none;	
+}
+
+.easypopup img {
+	max-width: 100%;
+	max-height: 70vh;
 }
