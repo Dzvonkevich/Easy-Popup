@@ -97,7 +97,7 @@ a {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg);    
 }
 
-a.btn {
+.btn {
     display: inline-block;
     
     padding: .5em .8em;
@@ -108,28 +108,30 @@ a.btn {
     text-decoration: none;
     transition: ease .3s;
     -webkit-transition: ease .3s;
+    border: none;
+    outline: none;
     
 }
 
-a.btn:hover {
+.btn:hover {
     background: #E04C1D;
     transition: ease .3s;
     -webkit-transition: ease .3s;
 }
 
-a.btn:active {
+.btn:active {
     background: #DD2C00;
     transform: scale(.98);
     transition: ease .3s;
     -webkit-transition: ease .3s;
 }
 
-a.btn:focus {
+.btn:focus {
     background: rgba(38, 50, 56, 0.4);
     transition: ease .3s;
     -webkit-transition: ease .3s;
 }
 
-a.btn + a.btn {
+.btn + .btn {
     margin-top: 5px;
 }
