@@ -13,7 +13,8 @@
 	opacity: 0;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
-	overflow-y: auto; 
+	overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .easypopup-close {

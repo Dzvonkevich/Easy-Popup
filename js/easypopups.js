@@ -8,34 +8,34 @@
 
 	$(function() {
 
-		$('[id^=popup-]').addClass('easypopup-block easypopup');
+		var easypopup, easypopupIn, easypopupOut, easypopupOther, easypopupOtherOut;
 
-		$('a[href^=#popup-], [data-easypopup-href^=popup-]').on('click', easypopup); // Catch the click on button and working with easypopup
+		$('[id^="popup-"]').addClass('easypopup-block easypopup');
+		$('a[href^="#popup-"], [data-easypopup-href^="popup-"]').on('click', easypopupCall); // Catch the click on button and working with easypopup
 
 	}); 
 
-	function easypopup(easypopup) {
+	function easypopupCall(e) {
 
 		var click = $(this);
 
 		switch(true) {
 			case ( click.is( 'a' ) ):
-		        easypopup.preventDefault();
-				var easypopup = $(this).attr('href');
+		        e.preventDefault();
+				easypopup = $(this).attr('href');
 				break;
 			default:
-				var easypopup = '#' + $(this).data('easypopupHref');
+				easypopup = '#' + $(this).data('easypopupHref');
 				break;
 		}
 
-
-		var easypopupIn = $(easypopup).data('easypopupIn');
-		var easypopupOut = $(easypopup).data('easypopupOut');
+		easypopupIn = $(easypopup).data('easypopupIn');
+		easypopupOut = $(easypopup).data('easypopupOut');
 
 		if ( $('.easypopup').hasClass('easypopup-active') ) {
 			
-			var easypopupOther = $('.easypopup-active');
-			var easypopupOtherOut = $(easypopupOther).data('easypopupOut');
+			easypopupOther = $('.easypopup-active');
+			easypopupOtherOut = $(easypopupOther).data('easypopupOut');
 
 			hidePopup(easypopupOther, easypopupOtherOut);
 
