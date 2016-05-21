@@ -80,6 +80,12 @@
 				break;
 		}
 
+		$(document).keydown(function(e) {
+		    if( e.keyCode === 27 ) {
+		        hidePopup(easypopup, easypopupOut);
+		    }
+		});
+
 		$('.easypopup-close, .easypopup-black, .easypopup-hide').on('click', function() {
 			hidePopup(easypopup, easypopupOut);
 		}); // Catch the click on close button.
@@ -170,7 +176,7 @@
 
 		setTimeout(function(){
 			cancelPopup(easypopup);
-		}, 500);
+		}, 1000);
 
 	} // Hide popup
 
